@@ -5,6 +5,7 @@ module grafikus {
     requires java.naming;
     requires java.sql;
     requires org.hibernate.orm.core;
+    requires weka.stable;
     opens grafikus to javafx.fxml;
     exports grafikus;
 }

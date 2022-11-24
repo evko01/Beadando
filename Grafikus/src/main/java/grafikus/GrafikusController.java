@@ -8,12 +8,24 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import weka.classifiers.Evaluation;
+import weka.classifiers.trees.J48;
+import weka.core.Instances;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.PrintWriter;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
+import java.util.Random;
 
 public class GrafikusController {
 
     @FXML
-    private GridPane gp1, gp2,gp3,gp4;
+    private GridPane gp1, gp2,gp3,gp4,gp5;
+    @FXML
+    private Label parhl1, parhl2;
 
 
     @FXML
@@ -66,6 +78,11 @@ public class GrafikusController {
 
 
 
+
+
+
+
+
     }
 
     void ElemekTörlése() {
@@ -78,6 +95,8 @@ public class GrafikusController {
         gp3.setManaged(false);
         gp4.setVisible(false);
         gp4.setManaged(false);
+        gp5.setVisible(false);
+        gp5.setManaged(false);
         //box2.setVisible(false);
         //box2.setManaged(false);
         box3.setVisible(false);
@@ -88,6 +107,7 @@ public class GrafikusController {
         tv2.setManaged(false);
         tv3.setVisible(false);
         tv3.setManaged(false);
+
 
     }
    /* @FXML protected void menuCreateClick() {
@@ -155,7 +175,7 @@ public class GrafikusController {
         osztalyCol.setCellValueFactory(new PropertyValueFactory("Osztaly"));
         tv1.getItems().clear();
         tv2.getItems().clear();
-       tv3.getItems().clear();
+        tv3.getItems().clear();
 
         Session session = factory.openSession();
         Session session2 = factory.openSession();
@@ -177,7 +197,7 @@ public class GrafikusController {
         t2.commit();
 
         for (Vizsgazo vizsgazo : listaa)
-           tv3.getItems().add(vizsgazo);
+            tv3.getItems().add(vizsgazo);
         System.out.println();
         t3.commit();
     }
@@ -214,9 +234,9 @@ public class GrafikusController {
     }
 
     //public void bt2Click(ActionEvent actionEvent) {
-       //Create();
-        //ElemekTörlése();
-   //
+    //Create();
+    //ElemekTörlése();
+    //
     @FXML public void menuUpdateClick() {
         ElemekTörlése();
         gp4.setVisible(true);
@@ -236,19 +256,111 @@ public class GrafikusController {
     void Delete(){
         Session session = factory.openSession();
         Transaction t = session.beginTransaction();
-        String választott = box2.getSelectionModel().getSelectedItem().toString();
-       List<Vizsgatargy> list = session.createQuery("DELETE FROM Vizsgatargy ").list();
-        session.save(list);
+        String valasztott = box2.getSelectionModel().getSelectedItem().toString();
+        String sqlQuery = "DELETE FROM Vizsgatargy WHERE azon ='" + valasztott + "'";
+        session.createQuery(sqlQuery);
+        //session.save(valasztott);
         t.commit();
+
+
     }
     public void bt3Click(ActionEvent actionEvent) {
-        ElemekTörlése();
         Delete();
+        ElemekTörlése();
     }
 
 
+    public void dontesiFa(ActionEvent actionEvent) {
+        ElemekTörlése();
+
+    }
+
+    public void tobbAlg(ActionEvent actionEvent) {
+        ElemekTörlése();
+    }
+
+    public void tobbAlg2(ActionEvent actionEvent) {
+        ElemekTörlése();
+    }
+
+    public void restCreat(ActionEvent actionEvent) {
+        ElemekTörlése();
+    }
+
+    public void restRead(ActionEvent actionEvent) {
+        ElemekTörlése();
+    }
+
+    public void restUpdate(ActionEvent actionEvent) {
+        ElemekTörlése();
+    }
+
+    public void restDelete(ActionEvent actionEvent) {
+        ElemekTörlése();
+    }
+
+    public void rest2Creat(ActionEvent actionEvent) {
+        ElemekTörlése();
+    }
+
+    public void rest2Read(ActionEvent actionEvent) {
+        ElemekTörlése();
+    }
+
+    public void rest2Update(ActionEvent actionEvent) {
+        ElemekTörlése();
+    }
+
+    public void rest2Delete(ActionEvent actionEvent) {
+        ElemekTörlése();
+    }
+
+    public void letoltes(ActionEvent actionEvent) {
+        ElemekTörlése();
+    }
+
+    public void letoltes2(ActionEvent actionEvent) {
+        ElemekTörlése();
+    }
+
+    public void grafikon(ActionEvent actionEvent) {
+        ElemekTörlése();
+    }
+
+    @FXML public void parhuzamos() {
+
+        ElemekTörlése();
+        gp5.setVisible(true);
+        gp5.setManaged(true);
+        parhl1.setVisible(true);
+        parhl1.setManaged(true);
+        parhl2.setVisible(true);
+        parhl2.setManaged(true);
+    }
+    void cserel() {
+        Session session = factory.openSession();
+        Session session2 = factory.openSession();
 
 
 
+        String[] abc = {"momentum", "brave", "aloof", "stunning", "call"};
+        String[] abc1 = {"dilemma", "mainstream" ,"yard","outside", "foot"};
+        int i = new Random().nextInt(abc.length);
+        String generatedString =abc[i];
+        String generatedString2 = abc1[i];
+        parhl1.setText(generatedString);
+        parhl2.setText(generatedString2);
+        session.save(generatedString);
+        session2.save(generatedString2);
+    }
 
+    public void stream(ActionEvent actionEvent) {
+
+
+    }
+
+    public void bt4Click(ActionEvent actionEvent) {
+        cserel();
+        ElemekTörlése();
+    }
 }

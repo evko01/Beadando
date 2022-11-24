@@ -45,6 +45,47 @@
                 <items>
                     <MenuItem text="Töröl" onAction="#menuDeleteClick"/>
                 </items>
+
+            </Menu>
+            <Menu text="Rest1">
+                <items>
+                    <MenuItem text="Create" onAction="#restCreat"></MenuItem>
+                    <MenuItem text="Read" onAction="#restRead"></MenuItem>
+                    <MenuItem text="Update" onAction="#restUpdate"></MenuItem>
+                    <MenuItem text="Delete" onAction="#restDelete"></MenuItem>
+                </items>
+            </Menu>
+            <Menu text="Rest2">
+            <items>
+                <MenuItem text="Create" onAction="#rest2Creat"></MenuItem>
+                <MenuItem text="Read" onAction="#rest2Read"></MenuItem>
+                <MenuItem text="Update" onAction="#rest2Update"></MenuItem>
+                <MenuItem text="Delete" onAction="#rest2Delete"></MenuItem>
+            </items>
+        </Menu>
+            <Menu text="Soap Kliens">
+            <items>
+                <MenuItem text="Letöltés" onAction="#letoltes"></MenuItem>
+                <MenuItem text="Letöltés2" onAction="#letoltes2"></MenuItem>
+                <MenuItem text="Grafikon" onAction="#grafikon"></MenuItem>
+
+            </items>
+        </Menu>
+
+            <Menu text="Adatbányászat">
+                <items>
+                    <MenuItem text="döntési fa" onAction="#dontesiFa"></MenuItem>
+                    <MenuItem text="több algoritmus" onAction="#tobbAlg"></MenuItem>
+                    <MenuItem text="több algoritmus2" onAction="#tobbAlg2"></MenuItem>
+
+                </items>
+            </Menu>
+            <Menu text="Egyéb">
+                <items>
+                    <MenuItem text="Párhuzamos" onAction="#parhuzamos"></MenuItem>
+                    <MenuItem text="Stream" onAction="#stream"></MenuItem>
+
+                </items>
             </Menu>
         </menus>
     </MenuBar>
@@ -116,5 +157,10 @@
     <GridPane fx:id="gp4"  hgap="2" vgap="4" >
         <Label GridPane.rowIndex="1" GridPane.columnIndex="0">Rekord</Label>
         <ComboBox fx:id="box3" GridPane.rowIndex="1" GridPane.columnIndex="1" minWidth="100" ></ComboBox>
+    </GridPane>
+    <GridPane fx:id="gp5"  hgap="2" vgap="4">
+        <Label fx:id="parhl1" GridPane.rowIndex="0" GridPane.columnIndex="0" minWidth="Infinity" ></Label>
+        <Label fx:id="parhl2" GridPane.rowIndex="1" GridPane.columnIndex="0" minWidth="Infinity" ></Label>
+        <Button onAction="#bt4Click" GridPane.rowIndex="2" GridPane.columnIndex="0"  >Change</Button>
     </GridPane>
 </VBox>
