@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d19786e2-6cc5-4251-8e5d-4e1f8c3f6bb4" name="Changes" comment="Párhuzamos">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Grafikus/src/main/java/grafikus/RestCreate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/labor.arff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Grafikus/Grafikus.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Grafikus/Grafikus.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Grafikus/src/main/java/grafikus/GrafikusController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Grafikus/src/main/java/grafikus/GrafikusController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Grafikus/src/main/java/grafikus/Vizsgatargy.java" beforeDir="false" afterPath="$PROJECT_DIR$/Grafikus/src/main/java/grafikus/Vizsgatargy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Grafikus/src/main/resources/grafikus/grafikus.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Grafikus/src/main/resources/grafikus/grafikus.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Grafikus/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Grafikus/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="MigrationScriptOptions">
+    <option name="ignoreImplicitObjects" value="true" />
+    <option name="ignoreSourceCode" value="false" />
+  </component>
+  <component name="ProjectId" id="2EA8ZK7NpERt2jSpqWkoYtTTJQn" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "E:/java-fx-main",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Legion\OneDrive - Neumann János Egyetem\Asztal\beadando\data" />
+      <recent name="C:\Users\Legion\OneDrive - Neumann János Egyetem\Asztal\Java-JavaFX-3-Adatbazis-Menuvel adatbázis" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="AdatbázisAlkalmazás" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="grafikus.AdatbázisAlkalmazás" />
+      <module name="Grafikus" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d19786e2-6cc5-4251-8e5d-4e1f8c3f6bb4" name="Changes" comment="" />
+      <created>1662027082998</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1662027082998</updated>
+      <workItem from="1662027084222" duration="452000" />
+      <workItem from="1662033060093" duration="1234000" />
+      <workItem from="1662036249138" duration="12186000" />
+      <workItem from="1662099315928" duration="688000" />
+      <workItem from="1668700894536" duration="265000" />
+      <workItem from="1668701176607" duration="2591000" />
+      <workItem from="1668761947933" duration="10997000" />
+      <workItem from="1668775261684" duration="4858000" />
+      <workItem from="1668782987190" duration="108000" />
+      <workItem from="1668783146698" duration="511000" />
+      <workItem from="1668783676406" duration="892000" />
+      <workItem from="1668794076636" duration="9096000" />
+      <workItem from="1668856720403" duration="2136000" />
+      <workItem from="1669039708602" duration="15009000" />
+      <workItem from="1669108358539" duration="4492000" />
+      <workItem from="1669113480607" duration="579000" />
+      <workItem from="1669114079737" duration="251000" />
+      <workItem from="1669145595710" duration="1111000" />
+      <workItem from="1669148254552" duration="5892000" />
+      <workItem from="1669199914612" duration="4338000" />
+      <workItem from="1669204419703" duration="1835000" />
+      <workItem from="1669206275037" duration="3029000" />
+      <workItem from="1669209333416" duration="405000" />
+      <workItem from="1669209754952" duration="311000" />
+      <workItem from="1669210123939" duration="5794000" />
+      <workItem from="1669227902433" duration="7584000" />
+      <workItem from="1669280322775" duration="7143000" />
+      <workItem from="1669290570685" duration="388000" />
+      <workItem from="1669302942105" duration="3906000" />
+      <workItem from="1669310586025" duration="1049000" />
+      <workItem from="1669314874205" duration="626000" />
+      <workItem from="1669933308510" duration="2305000" />
+      <workItem from="1670237616312" duration="999000" />
+      <workItem from="1670342380643" duration="23000" />
+      <workItem from="1670409284504" duration="418000" />
+      <workItem from="1670409727987" duration="736000" />
+      <workItem from="1670412366767" duration="317000" />
+      <workItem from="1670415638274" duration="13492000" />
+    </task>
+    <task id="LOCAL-00001" summary="Párhuzamos">
+      <created>1669303021118</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1669303021118</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Párhuzamos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Párhuzamos" />
+  </component>
+</project>

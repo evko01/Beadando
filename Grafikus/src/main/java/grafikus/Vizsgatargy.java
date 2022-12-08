@@ -13,26 +13,15 @@ public class Vizsgatargy {
     public int szomax;
     @Column(name = "irmax")
     public int irmax;
-    @Column(name = "vizsgazoaz")
-    public int vizsgazoaz2;
-
-
 
     public Vizsgatargy(int azon, String nev, int szomax, int irmax, int vizsgazoaz) {
         this.azon = azon;
         this.nev = nev;
         this.szomax = szomax;
         this.irmax = irmax;
-        this.vizsgazoaz2 = vizsgazoaz;
+        //this.vizsgazoaz2 = vizsgazoaz;
     }
 
-    public int getVizsgazoaz2() {
-        return vizsgazoaz2;
-    }
-
-    public void setVizsgazoaz2(int vizsgazoaz) {
-        this.vizsgazoaz2 = vizsgazoaz;
-    }
 
     public Vizsgatargy() {
     }

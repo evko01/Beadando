@@ -124,7 +124,7 @@
         <TextField fx:id="tfNev2" GridPane.rowIndex="2" GridPane.columnIndex="1"></TextField>
         <TextField fx:id="tfosztaly" GridPane.rowIndex="3" GridPane.columnIndex="1"></TextField>
     </TableView>-->
-
+    <!-- olvas-->
     <GridPane fx:id="gp1" hgap="2" vgap="4">
         <Label GridPane.rowIndex="0" GridPane.columnIndex="0">Név:</Label>
         <TextField fx:id="textf1" GridPane.rowIndex="0" GridPane.columnIndex="1"></TextField>
@@ -137,7 +137,7 @@
         <Button onAction="#bt1Click" GridPane.rowIndex="5" GridPane.columnIndex="1" >Keres</Button>
     </GridPane>
 
-
+    <!--Ír-->
     <GridPane fx:id="gp2"  hgap="2" vgap="4">
         <Label GridPane.rowIndex="0" GridPane.columnIndex="0"> Azon</Label>
         <TextField fx:id="tfAzon2" GridPane.rowIndex="0" GridPane.columnIndex="1"></TextField>
@@ -148,19 +148,38 @@
         <Button onAction="#bt2Click" GridPane.rowIndex="3" GridPane.columnIndex="1" >Létrehoz</Button>
     </GridPane>
 
-
+    <!-- töröl-->
     <GridPane fx:id="gp3"  hgap="2" vgap="4">
         <Label GridPane.rowIndex="1" GridPane.columnIndex="0">Rekord</Label>
         <ComboBox fx:id="box2" GridPane.rowIndex="1" GridPane.columnIndex="1" minWidth="100" ></ComboBox>
         <Button onAction="#bt3Click" GridPane.rowIndex="2" GridPane.columnIndex="0" >Töröl</Button>
     </GridPane>
+    <!--Módosít-->
     <GridPane fx:id="gp4"  hgap="2" vgap="4" >
-        <Label GridPane.rowIndex="1" GridPane.columnIndex="0">Rekord</Label>
-        <ComboBox fx:id="box3" GridPane.rowIndex="1" GridPane.columnIndex="1" minWidth="100" ></ComboBox>
+        <Label GridPane.rowIndex="0" GridPane.columnIndex="0">Azonosító</Label>
+        <ComboBox fx:id="box3" GridPane.rowIndex="0" GridPane.columnIndex="1" minWidth="100" ></ComboBox>
+        <Label GridPane.rowIndex="1" GridPane.columnIndex="0"> Név</Label>
+        <TextField fx:id="Nev3" GridPane.rowIndex="1" GridPane.columnIndex="1"></TextField>
+        <Label GridPane.rowIndex="2" GridPane.columnIndex="0"> Osztály</Label>
+        <TextField fx:id="tfOsztaly2" GridPane.rowIndex="2" GridPane.columnIndex="1"></TextField>
+        <Button onAction="#bt6Click" GridPane.rowIndex="3" GridPane.columnIndex="0" >Módosít</Button>
     </GridPane>
+<!--Párhuzamos-->
     <GridPane fx:id="gp5"  hgap="2" vgap="4">
         <Label fx:id="parhl1" GridPane.rowIndex="0" GridPane.columnIndex="0" minWidth="Infinity" ></Label>
         <Label fx:id="parhl2" GridPane.rowIndex="1" GridPane.columnIndex="0" minWidth="Infinity" ></Label>
         <Button onAction="#bt4Click" GridPane.rowIndex="2" GridPane.columnIndex="0"  >Change</Button>
+    </GridPane>
+    <!-- Olvas2-->
+    <GridPane fx:id="gp6"  hgap="2" vgap="4">
+        <Label GridPane.rowIndex="0" GridPane.columnIndex="0"></Label>
+        <TextField fx:id="streamTf" GridPane.rowIndex="0" GridPane.columnIndex="0"></TextField>
+        <Label GridPane.rowIndex="1" GridPane.columnIndex="1" minWidth="100"></Label>
+        <ComboBox fx:id="box4" GridPane.rowIndex="1" GridPane.columnIndex="0" minWidth="100" ></ComboBox>
+        <RadioButton GridPane.rowIndex="3" GridPane.columnIndex="0">asfafas</RadioButton>
+        <RadioButton GridPane.rowIndex="3" GridPane.columnIndex="1">asfafas</RadioButton>
+        <CheckBox fx:id="cb3" GridPane.rowIndex="4" GridPane.columnIndex="0">valami</CheckBox>
+        <CheckBox fx:id="cb4" GridPane.rowIndex="4" GridPane.columnIndex="1">valami</CheckBox>
+        <Button onAction="#bt5Click" GridPane.rowIndex="5" GridPane.columnIndex="0"  >Change</Button>
     </GridPane>
 </VBox>

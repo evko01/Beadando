@@ -1,9 +1,11 @@
 package grafikus;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.GridPane;
+import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -19,11 +21,12 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 public class GrafikusController {
 
     @FXML
-    private GridPane gp1, gp2,gp3,gp4,gp5;
+    private GridPane gp1, gp2,gp3,gp4,gp5, gp6;
     @FXML
     private Label parhl1, parhl2;
 
@@ -35,7 +38,7 @@ public class GrafikusController {
     @FXML
     private TableView tv1, tv2, tv3;
     @FXML
-    private ComboBox box1,box2,box3;
+    private ComboBox box1,box2,box3,box4;
     @FXML
     private TableColumn<Vizsga, Integer> vizsgazoazCol;
     @FXML
@@ -75,8 +78,10 @@ public class GrafikusController {
         box1.getItems().add("Vizgsatargy");
         String[] szamok = {"1","2","3","4","5","6","7","8","9","10"};
         box2.getItems().addAll(szamok);
-
-
+        box4.getItems().add("Vizgsa");
+        box4.getItems().add("Vizsgazo");
+        box4.getItems().add("Vizgsatargy");
+       // box3.getItems().addAll(szamok);
 
 
 
@@ -97,6 +102,8 @@ public class GrafikusController {
         gp4.setManaged(false);
         gp5.setVisible(false);
         gp5.setManaged(false);
+        gp6.setVisible(false);
+        gp6.setManaged(false);
         //box2.setVisible(false);
         //box2.setManaged(false);
         box3.setVisible(false);
@@ -110,28 +117,7 @@ public class GrafikusController {
 
 
     }
-   /* @FXML protected void menuCreateClick() {
-        ElemekTörlése();
-        gp1.setVisible(true);
-        gp1.setManaged(true);
-    }*/
 
-    /*void Create(){
-        Session session = factory.openSession();
-        Transaction t = session.beginTransaction();
-        Vizsga vizsga=new Vizsga(Integer.parseInt(tfVizsgazoaz.getText()), tfVizsgatargyaz.getText(), Integer.parseInt(tfSzobeli.getText()),Integer.parseInt(tfIrasbeli.getText()));
-
-        session.save(vizsga);
-        t.commit();
-    }*/
-
-    /*@FXML void bt1Click(){
-        Create();
-        ElemekTörlése();
-        lb1.setVisible(true);
-        lb1.setManaged(true);
-        lb1.setText("Adatok beírva az adatbázisba");
-    }*/
     @FXML
     protected void menuReadClick() {
         ElemekTörlése();
@@ -243,8 +229,28 @@ public class GrafikusController {
         gp4.setManaged(true);
         box3.setVisible(true);
         box3.setManaged(true);
-
-
+        Session session = factory.openSession();
+        List<Vizsgazo> lista = session.createQuery("from Vizsgazo ").list();
+        List<Integer> azonosítok = lista.stream().map(Vizsgazo::getAzon2).collect(Collectors.toList());
+        box3.getItems().addAll(azonosítok);
+    }
+    void Módosít(){
+        Session session = factory.openSession();
+        Transaction t = session.beginTransaction();
+        int valasztott = Integer.parseInt(box3.getSelectionModel().getSelectedItem().toString());
+        String név = Nev2.getText();
+        String osztály = tfOsztaly.getText();
+        // Vizsgazo targy = session.get(Vizsgazo.class,valasztott);
+         //targy.setOsztaly(osztály);
+         //targy.setNev2(név);
+        Vizsgazo tanulo =(Vizsgazo) session.createQuery("From Vizsgazo v where v.azon2="+valasztott).list().get(0);
+        session.delete(tanulo);
+        session.saveOrUpdate(new Vizsgazo(valasztott,név,osztály));
+        t.commit();
+    }
+    public void bt6Click(ActionEvent actionEvent) {
+        Módosít();
+        ElemekTörlése();
     }
 
 
@@ -259,10 +265,8 @@ public class GrafikusController {
         String valasztott = box2.getSelectionModel().getSelectedItem().toString();
         String sqlQuery = "DELETE FROM Vizsgatargy WHERE azon ='" + valasztott + "'";
         session.createQuery(sqlQuery);
-        //session.save(valasztott);
+        session.save(valasztott);
         t.commit();
-
-
     }
     public void bt3Click(ActionEvent actionEvent) {
         Delete();
@@ -338,29 +342,103 @@ public class GrafikusController {
         parhl2.setManaged(true);
     }
     void cserel() {
-        Session session = factory.openSession();
-        Session session2 = factory.openSession();
-
-
-
         String[] abc = {"momentum", "brave", "aloof", "stunning", "call"};
         String[] abc1 = {"dilemma", "mainstream" ,"yard","outside", "foot"};
-        int i = new Random().nextInt(abc.length);
-        String generatedString =abc[i];
-        String generatedString2 = abc1[i];
-        parhl1.setText(generatedString);
-        parhl2.setText(generatedString2);
-        session.save(generatedString);
-        session2.save(generatedString2);
+        Runnable task=()->{
+            while(true) {
+                int i = new Random().nextInt(abc.length);
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+                Platform.runLater(() -> {
+                            parhl1.setText(abc[i]);
+                        }
+                );
+            }
+        };
+        Runnable task2=()->{
+            int i = new Random().nextInt(abc1.length);
+            while(true) {
+                try {
+
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+                Platform.runLater(() -> {
+                            parhl2.setText(abc1[i]);
+                        }
+                );
+            }
+        };
+        new Thread(task).start();
+        new Thread(task2).start();
     }
+    public void bt4Click(ActionEvent actionEvent) {
+
+        ElemekTörlése();
+
+        ElemekTörlése();
+        gp5.setVisible(true);
+        gp5.setManaged(true);
+        parhl1.setVisible(true);
+        parhl1.setManaged(true);
+        parhl2.setVisible(true);
+        parhl2.setManaged(true);
+        String[] abc = {"momentum", "brave", "aloof", "stunning", "call"};
+        String[] abc1 = {"dilemma", "mainstream" ,"yard","outside", "foot"};
+        Runnable task=()->{
+            while(true) {
+                int i = new Random().nextInt(abc.length);
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+                Platform.runLater(() -> {
+                            parhl1.setText(abc[i]);
+                        }
+                );
+            }
+        };
+        Runnable task2=()->{
+            while(true) {
+                int i = new Random().nextInt(abc.length);
+                try {
+
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+                Platform.runLater(() -> {
+                            parhl2.setText(abc1[i]);
+                        }
+                );
+            }
+        };
+        new Thread(task).start();
+        new Thread(task2).start();
+    }
+
+
 
     public void stream(ActionEvent actionEvent) {
+        ElemekTörlése();
+        gp6.setVisible(true);
+        gp6.setManaged(true);
 
+    }
+    void StreamKeres(){
 
     }
 
-    public void bt4Click(ActionEvent actionEvent) {
-        cserel();
+
+    public void bt5Click(ActionEvent actionEvent) {
+        StreamKeres();
         ElemekTörlése();
     }
+
+
 }
